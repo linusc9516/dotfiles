@@ -4,4 +4,4 @@
 	name = linusc9516
 	email = linusc9516@gmail.com
 [core]
-	excludesfile = /Users/linusc/.gitignore
+	excludesfile = /Users/linusc/.gitignore_global

@@ -6,6 +6,7 @@ sudo apt install -y gpg
 sudo mkdir -p /etc/apt/keyrings
 wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
 echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo add-apt-repository ppa:recoll-backports/recoll-1.15-on
 sudo apt update
 sudo apt install -y \
   base-files bash bat bsdutils build-essential coreutils curl dash \
@@ -13,7 +14,7 @@ sudo apt install -y \
   fzf gh git git-delta grep gzip hostname init libattr1 login \
   ncurses-base ncurses-bin nodejs npm python3-dev ripgrep sesh tmux \
   ubuntu-minimal ubuntu-wsl util-linux wget wslu zoxide \
-  tldr
+  tldr recoll
 
 echo "→ Setting fish as default shell..."
 FISH_PATH="$(command -v fish)"
