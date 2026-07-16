@@ -1,0 +1,1 @@
+yabai -m signal --add event=space_create action='yabai -m space $YABAI_SPACE --layout bsp'
