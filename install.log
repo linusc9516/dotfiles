@@ -1,0 +1,8 @@
+[00:36:13 2026-07-10] FETCHING Version 2.44.0
+[00:36:13 2026-07-10] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.44.0/spicetify-2.44.0-darwin-arm64.tar.gz
+[00:36:20 2026-07-10] EXTRACTING /Users/linusc/.spicetify/spicetify.tar.gz
+[00:36:20 2026-07-10] SETTING EXECUTABLE PERMISSIONS TO /Users/linusc/.spicetify/spicetify
+[00:36:20 2026-07-10] REMOVING /Users/linusc/.spicetify/spicetify.tar.gz
+[00:36:20 2026-07-10] spicetify path already set in /Users/linusc/.config/fish/config.fish, continuing...
+[00:36:20 2026-07-10] spicetify v2.44.0 was installed successfully to /Users/linusc/.spicetify
+[00:36:20 2026-07-10] Run 'spicetify --help' to get started

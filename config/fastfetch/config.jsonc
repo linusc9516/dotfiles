@@ -1,0 +1,132 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "padding": {
+      "top": 4,
+      "right": 1
+    }
+  },
+  "display": {
+    "separator": ">  ",
+    "color": {
+      "separator": "red",
+      "output": "cyan"
+    },
+    "constants": [
+      "───────────────────────────────────────────────────────────────────────────",
+      "│\u001b[75C│\u001b[75D"
+    ]
+  },
+  "modules": [
+    {
+      "format": "{#1}{#keys}╭{$1}╮",
+      "type": "custom"
+    },
+    {
+      "format": "{#keys}│\u001b[75C│\u001b[75D{user-name-colored}{at-symbol-colored}{host-name-colored} 🖥 ",
+      "type": "title"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#33}{icon} Distro    ",
+      "type": "os"
+    },
+    {
+      "key": "{$2}{#33} Shell     ",
+      "type": "shell"
+    },
+    {
+      "key": "{$2}{#33}󰏖 Packages  ",
+      "type": "packages"
+    },
+    {
+      "key": "{$2}{#33} Processes ",
+      "type": "processes"
+    },
+    {
+      "key": "{$2}{#33}󰅐 Uptime    ",
+      "type": "uptime"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#32}󰍛 CPU       ",
+      "type": "cpu",
+      "showPeCoreCount": true,
+      "temp": true
+    },
+    {
+      "key": "{$2}{#32} CPU Usage ",
+      "type": "cpuusage"
+    },
+    {
+      "key": "{$2}{#32} GPU       ",
+      "type": "gpu"
+    },
+    {
+      "key": "{$2}{#32} Memory    ",
+      "type": "memory"
+    },
+    {
+      "key": "{$2}{#32}󰉉 Disk      ",
+      "type": "disk"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#35}󰍹 Monitor   ",
+      "type": "monitor",
+      "format": "{2}x{3} px @ 60.0 Hz - {4}x{5} mm"
+    },
+    {
+      "key": "{$2}{#35} Battery   ",
+      "type": "battery"
+    },
+    {
+      "key": "{$2}{#35}󰩟 Network   ",
+      "type": "localip",
+      "format": "{ipv4} ({ifname})"
+    },
+    {
+      "key": "{$2}{#35}󰇖 DNS       ",
+      "type": "dns"
+    },
+    {
+      "key": "{$2}{#35} DateTime  ",
+      "type": "datetime"
+    },
+    {
+      "key": "{$2}{#35} Users     ",
+      "type": "users"
+    },
+    {
+      "key": "{$2}{#35} Weather   ",
+      "type": "weather",
+      "timeout": 1000
+    },
+    {
+      "key": "{$2}{#35} Version   ",
+      "type": "version"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#39} colors    ",
+      "type": "colors",
+      "symbol": "circle"
+    },
+    {
+      "format": "{#1}{#keys}╰{$1}╯",
+      "type": "custom"
+    }
+  ]
+}
