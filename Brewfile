@@ -1,6 +1,7 @@
 tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "eugene-babichenko/fixit"
 tap "felixkratz/formulae", trusted: true
+tap "nailuogg/recoll", "https://github.com/nailuoGG/homebrew-recoll", trusted: true
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -35,6 +36,8 @@ brew "stow"
 brew "tldr"
 # Terminal multiplexer
 brew "tmux"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Simple hotkey-daemon for macOS.
@@ -43,6 +46,8 @@ brew "asmvik/formulae/skhd", trusted: true
 brew "eugene-babichenko/fixit/fixit", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# Full-text search for your desktop
+brew "nailuogg/recoll/recoll"
 cask "font-meslo-lg-nerd-font"
 # Keyboard customiser
 cask "karabiner-elements"
