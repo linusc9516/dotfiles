@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.gitconfig: .gitconfig
+    ~/.gitignore_global: .gitignore_global
+    ~/.config/:
+      path: config/**
+      glob: true
+      relink: true
+      create: true
+      exclude: config/fish/fish_variables*
