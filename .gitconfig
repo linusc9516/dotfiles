@@ -5,6 +5,7 @@
 	excludesfile = /Users/linusc/.gitignore_global
 [include]
 	path = ~/.config/delta/themes/catppuccin.gitconfig
-
 [delta]
 	features = catppuccin-mocha
+[push]
+    autoSetupRemote = true
