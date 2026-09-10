@@ -1,0 +1,10 @@
+[user]
+	name = Linus C.
+	email = linusc9516@gmail.com
+[core]
+	excludesfile = /Users/linusc/.gitignore_global
+[include]
+	path = ~/.config/delta/themes/catppuccin.gitconfig
+
+[delta]
+	features = catppuccin-mocha
