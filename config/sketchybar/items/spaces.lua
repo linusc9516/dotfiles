@@ -23,7 +23,7 @@ for i = 1, 10, 1 do
       padding_left = 8,
       padding_right = 4,
       color = colors.white,
-      highlight_color = colors.red,
+      highlight_color = colors.accent,
     },
     label = {
       padding_right = 12,
@@ -75,7 +75,7 @@ for i = 1, 10, 1 do
     space:set({
       icon = { highlight = is_selected },
       label = { highlight = is_selected },
-      background = { border_color = is_selected and colors.red or colors.bg2 }
+      background = { border_color = is_selected and colors.accent or colors.bg2 }
     })
     -- Cannot explain why removing brackets will bomb sketchybar
     space_bracket:set({
