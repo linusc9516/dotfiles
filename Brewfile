@@ -1,58 +1,96 @@
-brew "asmvik/formulae/yabai", trusted: true
-brew "eugene-babichenko/fixit/fixit", trusted: true
-# why is fuck not maintained on brew ugh
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
+tap "crmne/tap"
+tap "eugene-babichenko/fixit"
 tap "felixkratz/formulae", trusted: true
 tap "jackielii/tap"
 tap "koekeishiya/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "nailuogg/recoll", "https://github.com/nailuoGG/homebrew-recoll", trusted: true
 tap "nikitabobko/tap", trusted: true
+tap "psharma04/dorion", trusted: true
 tap "shaunsingh/sfmono-nerd-font-ligaturized", "https://github.com/shaunsingh/homebrew-SFMono-Nerd-Font-Ligaturized"
-
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Modern, maintained replacement for ls
 brew "eza"
-brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
 brew "gcc"
+# GitHub command-line tool
 brew "gh"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Powerful, lightweight programming language
 brew "lua"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Retrieves currently playing media, and simulates media actions
 brew "nowplaying-cli"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
 brew "rustup"
+# Smart session manager for the terminal
 brew "sesh"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Change macOS audio source from the command-line
 brew "switchaudio-osx"
+# Simplified and community-driven man pages
 brew "tldr"
+# Terminal multiplexer
 brew "tmux"
+# Markup-based typesetting system
 brew "typst"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# A tiling window manager for macOS based on binary space partitioning.
+brew "asmvik/formulae/yabai", trusted: true
+# A utility to fix mistakes in your commands.
+brew "eugene-babichenko/fixit/fixit", trusted: true
+# A window border system for macOS
 brew "felixkratz/formulae/borders"
+# Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# Full-text search for your desktop
 brew "nailuogg/recoll/recoll"
-
-# Fonts
 cask "font-hack-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-sf-mono"
 cask "font-sf-mono-nerd-font-ligaturized"
 cask "font-sf-pro"
-
-# Other casks
+# Keyboard customiser
 cask "karabiner-elements"
+# GPU-based terminal emulator
 cask "kitty"
+# Screenshot and annotation tool
 cask "ksnip"
+# Clipboard manager
 cask "maccy"
+# Utility to extend trackpad functionality
 cask "middleclick"
+# Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Simple hotkey daemon written in Zig
 cask "jackielii/tap/skhd-zig", trusted: true
+# Native Spotify client
+cask "crmne/tap/spotifast", trusted: true
+# System monitor for the menu bar
 cask "stats"
-
+# Native WhatsApp client
+cask "crmne/tap/zapfast", trusted: true
 vscode "bourhaouta.tailwindshades"
 vscode "bradlc.vscode-tailwindcss"
 vscode "catppuccin.catppuccin-vsc"
