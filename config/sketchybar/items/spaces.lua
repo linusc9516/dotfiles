@@ -29,7 +29,7 @@ for i = 1, 10, 1 do
       padding_right = 12,
       color = colors.grey,
       highlight_color = colors.white,
-      font = "sketchybar-app-font:Regular:14.0",
+      font = "sketchybar-app-font:Regular:16.0",
       y_offset = -1,
     },
     padding_right = 3,
@@ -107,14 +107,14 @@ local space_window_observer = sbar.add("item", {
 space_window_observer:subscribe("space_windows_change", function(env)
   local icon_line = ""
   local no_app = true
-  local n = 0
+  -- local n = 0
   for app, _ in pairs(env.INFO.apps) do
     no_app = false
-    n = n + 1
-    if n > 2 then
-      icon_line = icon_line .. " +"
-      break
-    end
+    -- n = n + 1
+    -- if n > 2 then
+    --   icon_line = icon_line .. " ⋯"
+    --   break
+    -- end
     local lookup = app_icons[app]
     local icon = ((lookup == nil) and app_icons["default"] or lookup)
     icon_line = icon_line .. " " .. icon
