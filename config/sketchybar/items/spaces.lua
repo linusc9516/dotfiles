@@ -84,13 +84,25 @@ for i = 1, 10, 1 do
     refresh(i)
   end)
 
+  -- Uncomment when yabai switch space fixed
+  -- space:subscribe("mouse.clicked", function(env)
+  --   if env.BUTTON == "other" then
+  --     space_popup:set({ background = { image = "space." .. env.SID } })
+  --     space:set({ popup = { drawing = "toggle" } })
+  --   else
+  --     local op = (env.BUTTON == "right") and "--destroy" or "--focus"
+  --     sbar.exec("yabai -m space " .. op .. " " .. env.SID)
+  --   end
+  -- end)
+
   space:subscribe("mouse.clicked", function(env)
     if env.BUTTON == "other" then
       space_popup:set({ background = { image = "space." .. env.SID } })
       space:set({ popup = { drawing = "toggle" } })
+    elseif env.BUTTON == "right" then
+      sbar.exec("yabai -m space --destroy " .. env.SID)
     else
-      local op = (env.BUTTON == "right") and "--destroy" or "--focus"
-      sbar.exec("yabai -m space " .. op .. " " .. env.SID)
+      sbar.exec("osascript -e 'tell application \"System Events\" to key code " .. (17 + tonumber(env.SID)) .. " using control down'")
     end
   end)
 
