@@ -95,6 +95,11 @@ for i = 1, 10, 1 do
   --   end
   -- end)
 
+ local digit_keycodes = {
+    [1] = 18, [2] = 19, [3] = 20, [4] = 21, [5] = 23,
+    [6] = 22, [7] = 26, [8] = 28, [9] = 25, [0] = 29,
+  }
+
   space:subscribe("mouse.clicked", function(env)
     if env.BUTTON == "other" then
       space_popup:set({ background = { image = "space." .. env.SID } })
@@ -102,7 +107,9 @@ for i = 1, 10, 1 do
     elseif env.BUTTON == "right" then
       sbar.exec("yabai -m space --destroy " .. env.SID)
     else
-      sbar.exec("osascript -e 'tell application \"System Events\" to key code " .. (17 + tonumber(env.SID)) .. " using control down'")
+      local n = tonumber(env.SID) % 10
+      local kc = digit_keycodes[n]
+      sbar.exec("osascript -e 'tell application \"System Events\" to key code " .. kc .. " using control down'")
     end
   end)
 
