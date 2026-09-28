@@ -11,20 +11,20 @@ for i = 1, 10, 1 do
     icon = {
       font = { family = settings.font.numbers },
       string = i,
-      padding_left = 10,
-      padding_right = 5,
+      padding_left = 8,
+      padding_right = 4,
       color = colors.white,
       highlight_color = colors.red,
     },
     label = {
-      padding_right = 15,
+      padding_right = 12,
       color = colors.grey,
       highlight_color = colors.white,
-      font = "sketchybar-app-font:Regular:16.0",
+      font = "sketchybar-app-font:Regular:14.0",
       y_offset = -1,
     },
-    padding_right = 1,
-    padding_left = 1,
+    padding_right = 3,
+    padding_left = 3,
     background = {
       color = colors.bg1,
       border_width = 3,
@@ -35,12 +35,12 @@ for i = 1, 10, 1 do
 
   spaces[i] = space
 
-  -- Padding space
-  sbar.add("space", "space.padding." .. i, {
-    space = i,
-    script = "",
-    width = settings.group_paddings,
-  })
+  -- -- Padding space
+  -- sbar.add("space", "space.padding." .. i, {
+  --   space = i,
+  --   script = "",
+  --   width = 0,
+  -- })
 
   local space_popup = sbar.add("item", {
     position = "popup." .. space.name,
@@ -106,6 +106,7 @@ space_window_observer:subscribe("space_windows_change", function(env)
     spaces[env.INFO.space]:set({ label = icon_line })
   end)
 end)
+
 
 -- spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
 --   local currently_on = spaces_indicator:query().icon.value == icons.switch.on
