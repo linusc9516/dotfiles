@@ -44,6 +44,9 @@ ctrl + alt - 0: yabai -m space --focus 10
 ctrl + alt - 0x1B: yabai -m space --focus prev
 ctrl + alt - 0x18: yabai -m space --focus next
 
+# Switch focus between the two displays (the spaces currently shown on each)
+ctrl + alt - n: yabai -m display --focus next || yabai -m display --focus first
+
 # Move window to spaces
 ctrl + alt + shift - 1: yabai -m window --space 1
 ctrl + alt + shift - 2: yabai -m window --space 2
