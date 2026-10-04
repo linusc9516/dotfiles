@@ -11,9 +11,9 @@ set -gx GCC_COLORS 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:qu
 set -gx EZA_CONFIG_DIR ~/.config/eza
 
 alias ls 'eza --icons -F -H --group-directories-first -1'
-alias la 'ls -alF'
-alias l 'ls -CF'
-alias lt 'ls -T --level=3 --classify'
+alias la 'ls -al'
+alias l 'eza --icons -F --group-directories-first'
+alias lt 'ls -T --level=3'
 alias cat 'bat'
 alias find 'fd'
 alias grep 'rg'
@@ -30,7 +30,7 @@ alias mkdir 'mkdir -pv'
 alias cl 'clear'
 alias calc 'bc -l -q'
 alias diff 'delta'
-alias recent 'ls -t -1'
+alias recent 'ls -s modified -r'
 alias hs 'history'
 alias ghs 'history | grep'
 alias src 'source ~/.config/fish/config.fish'
@@ -53,10 +53,10 @@ abbr lg 'lazygit'
 zoxide init fish | source
 fixit init fish | source
 rose_pine_tide moon
+
+# Tide tweaks on top of the Rosé Pine theme. Exported so that the background
+# process that renders the prompt sees them.
+set -gx tide_time_format %H:%M
+
 pfetch
 
-source "$HOME/.cargo/env.fish"
-
-fish_add_path /Users/linusc/.spicetify
-fish_add_path ~/.cargo/bin
-fish_add_path ~/.local/bin

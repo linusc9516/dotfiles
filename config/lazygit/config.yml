@@ -6,21 +6,31 @@ git:
     useConfig: false
 gui:
   authorColors:
-    "*": magenta
+    "*": "#b4befe"
   showNumstatInFilesView: true
   skipRewordInEditorWarning: true
   tabWidth: 2
+  # Catppuccin Mocha (mauve)
   theme:
     activeBorderColor:
-      - yellow
-      - bold
-    searchingActiveBorderColor:
-      - yellow
+      - "#cba6f7"
       - bold
     inactiveBorderColor:
-      - "#6e6a86"
+      - "#a6adc8"
+    optionsTextColor:
+      - "#89b4fa"
     selectedLineBgColor:
-      - black
+      - "#313244"
+    cherryPickedCommitBgColor:
+      - "#45475a"
+    cherryPickedCommitFgColor:
+      - "#cba6f7"
+    unstagedChangesColor:
+      - "#f38ba8"
+    defaultFgColor:
+      - "#cdd6f4"
+    searchingActiveBorderColor:
+      - "#f9e2af"
   border: single
   nerdFontsVersion: "3"
   spinner:

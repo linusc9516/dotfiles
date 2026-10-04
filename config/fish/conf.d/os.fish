@@ -5,14 +5,11 @@ switch (uname)
         # Homebrew (arm64 default)
         fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
 
-        # User local bins
+        # User local bins (also used by pipx)
         fish_add_path ~/.local/bin
 
         # Spicetify (macOS specific)
         fish_add_path ~/.spicetify
-
-        # pipx (macOS)
-        fish_add_path ~/.local/bin
 
         # macOS alert function (uses native notification)
         function alert
@@ -21,7 +18,7 @@ switch (uname)
             else
                 set result "Failure"
             end
-            set last_cmd (history --max=1 | sed -E 's/^\s*[0-9]+\s*//;s/[;&|]\s*alert$//')
+            set last_cmd (history --max=1 | sed -E 's/^[[:space:]]*[0-9]+[[:space:]]*//;s/[;&|][[:space:]]*alert$//')
             osascript -e "display notification \"$last_cmd\" with title \"$result\""
         end
 
