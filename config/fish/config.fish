@@ -50,7 +50,7 @@ abbr gac 'git add .; and git commit -m'
 abbr gl "git log --topo-order --all --graph --date=local --pretty=format:'%C(green)%h%C(reset) %><(55,trunc)%s%C(red)%d%C(reset) %C(blue)[%an]%C(reset) %C(yellow)%ad%C(reset)%n'"
 abbr lg 'lazygit'
 
-zoxide init fish | source
+zoxide init fish --cmd j | source
 fixit init fish | source
 
 # Tide prompt colours and tweaks. Exported (-g sets exported globals) so that
