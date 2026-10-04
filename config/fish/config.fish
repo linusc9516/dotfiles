@@ -52,11 +52,12 @@ abbr lg 'lazygit'
 
 zoxide init fish | source
 fixit init fish | source
-rose_pine_tide moon
 
-# Tide tweaks on top of the Rosé Pine theme. Exported so that the background
-# process that renders the prompt sees them.
+# Tide prompt colours and tweaks. Exported (-g sets exported globals) so that
+# the background process that renders the prompt sees them.
+catppuccin_tide -g mocha
 set -gx tide_time_format %H:%M
+set -gx tide_git_icon \ue702 # nf-dev-git, the diamond git logo
 
 pfetch
 
