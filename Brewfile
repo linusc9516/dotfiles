@@ -30,10 +30,14 @@ brew "git-delta"
 brew "lazygit"
 # Powerful, lightweight programming language
 brew "lua"
+# Media player based on MPlayer and mplayer2
+brew "mpv"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Retrieves currently playing media, and simulates media actions
 brew "nowplaying-cli"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Search tool like grep and The Silver Searcher
@@ -67,6 +71,7 @@ brew "felixkratz/formulae/sketchybar"
 # Full-text search for your desktop
 brew "nailuogg/recoll/recoll"
 cask "font-hack-nerd-font"
+cask "font-intone-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-sf-mono"
 cask "font-sf-mono-nerd-font-ligaturized"
