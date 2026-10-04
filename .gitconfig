@@ -3,8 +3,11 @@
 	email = linusc9516@gmail.com
 [core]
 	excludesfile = /Users/linusc/.gitignore_global
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
 [include]
-	path = ~/.config/delta/themes/catppuccin.gitconfig
+	path = ~/.config/delta/catppuccin.gitconfig
 [delta]
 	features = catppuccin-mocha
 [push]

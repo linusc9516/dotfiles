@@ -14,3 +14,7 @@
       relink: true
       create: true
       exclude: config/fish/fish_variables*
+    # lazygit reads its config from here on macOS, not from ~/.config
+    ~/Library/Application Support/lazygit/config.yml:
+      path: config/lazygit/config.yml
+      if: '[ "$(uname)" = Darwin ]'

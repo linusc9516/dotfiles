@@ -1,6 +1,4 @@
-# Note: try setup karabiner to rebind caps to hyper, but for me doesn't work with hyper+shift somehow
-
-# Move and focus windowos
+# Move and focus windows
 ctrl + alt - h: yabai -m window --focus west
 ctrl + alt - j: yabai -m window --focus south
 ctrl + alt - k: yabai -m window --focus north
@@ -10,7 +8,7 @@ ctrl + alt + shift - j: yabai -m window --warp south
 ctrl + alt + shift - k: yabai -m window --warp north
 ctrl + alt + shift - l: yabai -m window --warp east
 
-# Resize windowos and layouts
+# Resize windows and layouts
 ctrl + alt - up: yabai -m window --resize top:0:-20
 ctrl + alt + shift - down: yabai -m window --resize top:0:20
 ctrl + alt - down: yabai -m window --resize bottom:0:20
@@ -24,7 +22,7 @@ ctrl + alt - space: yabai -m space --layout next
 ctrl + alt - s: yabai -m space --layout stack
 ctrl + alt - b: yabai -m space --layout bsp
 
-# Manage windowos
+# Manage windows
 ctrl + alt - f: yabai -m window --toggle float
 ctrl + alt - r: yabai -m space --rotate 90
 ctrl + alt - v: yabai -m window --toggle split
@@ -46,7 +44,7 @@ ctrl + alt - 0: yabai -m space --focus 10
 ctrl + alt - 0x1B: yabai -m space --focus prev
 ctrl + alt - 0x18: yabai -m space --focus next
 
-# Move windowo to spaces
+# Move window to spaces
 ctrl + alt + shift - 1: yabai -m window --space 1
 ctrl + alt + shift - 2: yabai -m window --space 2
 ctrl + alt + shift - 3: yabai -m window --space 3
