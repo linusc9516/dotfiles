@@ -16,9 +16,9 @@ assign zen      '^Zen$'               3
 assign chrome   '^Google Chrome$'     4
 assign claude   '^Claude$'            5
 assign outlook  '^Microsoft Outlook$' 6
-assign dorion   '^Dorion$'            7
-assign telegram '^Telegram$'          8
-assign zapfast  '^ZapFast$'           8
+assign telegram '^Telegram$'          7
+assign zapfast  '^ZapFast$'           7
+assign dorion   '^Dorion$'            8
 assign spotify  '^Spotifast$'         9
 
 # Rules only affect windows that open after the rule was added,
