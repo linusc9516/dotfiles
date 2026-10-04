@@ -27,17 +27,25 @@
 
 `Ctrl + Alt + {{r}} / {{v}} / {{e}}`
 
-- Go to space 1-9 / space 10 / previous / next space:
+- Go to space 1-9 / space 10:
 
-`Ctrl + Alt + {{1..9}} / {{0}} / {{-}} / {{=}}`
+`Ctrl + {{1..9}} / {{0}}`
 
-- Send the window to space 1-9 / space 10 / previous / next space:
+- Send the window to space 1-9 / space 10:
 
-`Ctrl + Alt + Shift + {{1..9}} / {{0}} / {{-}} / {{=}}`
+`Ctrl + Shift + {{1..9}} / {{0}}`
+
+- Go to the previous / next space:
+
+`Ctrl + {{-}} / {{=}}`
+
+- Send the window to the previous / next space:
+
+`Ctrl + Shift + {{-}} / {{=}}`
 
 - Switch focus between the two displays:
 
-`Ctrl + Alt + {{n}}`
+`Ctrl + {{`}}`
 
 - Focus kitty / VS Code, or open it if it is not running:
 
