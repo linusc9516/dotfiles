@@ -3,6 +3,14 @@ return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
+      signs = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        changedelete = { text = "▎" },
+        untracked = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+      },
       on_attach = function(buf)
         local gs = require("gitsigns")
         local function m(lhs, rhs, desc)

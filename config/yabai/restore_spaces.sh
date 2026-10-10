@@ -11,10 +11,10 @@ assign() {
 
 assign code     '^Code$'              1
 assign kitty    '^kitty$'             1
-assign obsidian '^Obsidian$'          2
-assign zen      '^Zen$'               3
-assign chrome   '^Google Chrome$'     4
-assign claude   '^Claude$'            5
+assign zed      '^Zed$'               2
+assign obsidian '^Obsidian$'          3
+assign zen      '^Zen$'               4
+assign chrome   '^Google Chrome$'     5
 assign outlook  '^Microsoft Outlook$' 6
 assign telegram '^Telegram$'          7
 assign zapfast  '^ZapFast$'           7

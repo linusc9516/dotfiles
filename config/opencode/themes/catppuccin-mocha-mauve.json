@@ -1,0 +1,233 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "rosewater": "#f5e0dc",
+    "flamingo": "#f2cdcd",
+    "pink": "#f5c2e7",
+    "mauve": "#cba6f7",
+    "red": "#f38ba8",
+    "maroon": "#eba0ac",
+    "peach": "#fab387",
+    "yellow": "#f9e2af",
+    "green": "#a6e3a1",
+    "teal": "#94e2d5",
+    "sky": "#89dceb",
+    "sapphire": "#74c7ec",
+    "blue": "#89b4fa",
+    "lavender": "#b4befe",
+    "text": "#cdd6f4",
+    "subtext1": "#bac2de",
+    "subtext0": "#a6adc8",
+    "overlay2": "#9399b2",
+    "overlay1": "#7f849c",
+    "overlay0": "#6c7086",
+    "surface2": "#585b70",
+    "surface1": "#45475a",
+    "surface0": "#313244",
+    "base": "#1e1e2e",
+    "mantle": "#181825",
+    "crust": "#11111b"
+  },
+  "theme": {
+    "primary": {
+      "dark": "mauve",
+      "light": "mauve"
+    },
+    "secondary": {
+      "dark": "lavender",
+      "light": "lavender"
+    },
+    "accent": {
+      "dark": "mauve",
+      "light": "mauve"
+    },
+    "error": {
+      "dark": "red",
+      "light": "red"
+    },
+    "warning": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "success": {
+      "dark": "green",
+      "light": "green"
+    },
+    "info": {
+      "dark": "teal",
+      "light": "teal"
+    },
+    "text": {
+      "dark": "text",
+      "light": "text"
+    },
+    "textMuted": {
+      "dark": "overlay2",
+      "light": "overlay2"
+    },
+    "background": {
+      "dark": "base",
+      "light": "base"
+    },
+    "backgroundPanel": {
+      "dark": "mantle",
+      "light": "mantle"
+    },
+    "backgroundElement": {
+      "dark": "crust",
+      "light": "crust"
+    },
+    "border": {
+      "dark": "surface0",
+      "light": "surface0"
+    },
+    "borderActive": {
+      "dark": "mauve",
+      "light": "mauve"
+    },
+    "borderSubtle": {
+      "dark": "surface2",
+      "light": "surface2"
+    },
+    "diffAdded": {
+      "dark": "green",
+      "light": "green"
+    },
+    "diffRemoved": {
+      "dark": "red",
+      "light": "red"
+    },
+    "diffContext": {
+      "dark": "overlay2",
+      "light": "overlay2"
+    },
+    "diffHunkHeader": {
+      "dark": "peach",
+      "light": "peach"
+    },
+    "diffHighlightAdded": {
+      "dark": "green",
+      "light": "green"
+    },
+    "diffHighlightRemoved": {
+      "dark": "red",
+      "light": "red"
+    },
+    "diffAddedBg": {
+      "dark": "#24312b",
+      "light": "#24312b"
+    },
+    "diffRemovedBg": {
+      "dark": "#3c2a32",
+      "light": "#3c2a32"
+    },
+    "diffContextBg": {
+      "dark": "mantle",
+      "light": "mantle"
+    },
+    "diffLineNumber": {
+      "dark": "overlay2",
+      "light": "overlay2"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "#1e2a25",
+      "light": "#1e2a25"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "#32232a",
+      "light": "#32232a"
+    },
+    "markdownText": {
+      "dark": "text",
+      "light": "text"
+    },
+    "markdownHeading": {
+      "dark": "mauve",
+      "light": "mauve"
+    },
+    "markdownLink": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "markdownLinkText": {
+      "dark": "sky",
+      "light": "sky"
+    },
+    "markdownCode": {
+      "dark": "green",
+      "light": "green"
+    },
+    "markdownBlockQuote": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "markdownEmph": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "markdownStrong": {
+      "dark": "peach",
+      "light": "peach"
+    },
+    "markdownHorizontalRule": {
+      "dark": "subtext0",
+      "light": "subtext0"
+    },
+    "markdownListItem": {
+      "dark": "mauve",
+      "light": "mauve"
+    },
+    "markdownListEnumeration": {
+      "dark": "lavender",
+      "light": "lavender"
+    },
+    "markdownImage": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "markdownImageText": {
+      "dark": "sky",
+      "light": "sky"
+    },
+    "markdownCodeBlock": {
+      "dark": "text",
+      "light": "text"
+    },
+    "syntaxComment": {
+      "dark": "overlay2",
+      "light": "overlay2"
+    },
+    "syntaxKeyword": {
+      "dark": "mauve",
+      "light": "mauve"
+    },
+    "syntaxFunction": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "syntaxVariable": {
+      "dark": "red",
+      "light": "red"
+    },
+    "syntaxString": {
+      "dark": "green",
+      "light": "green"
+    },
+    "syntaxNumber": {
+      "dark": "peach",
+      "light": "peach"
+    },
+    "syntaxType": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "syntaxOperator": {
+      "dark": "sky",
+      "light": "sky"
+    },
+    "syntaxPunctuation": {
+      "dark": "text",
+      "light": "text"
+    }
+  }
+}

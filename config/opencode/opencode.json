@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "deepinfra/deepseek-ai/DeepSeek-V4.1-Flash",
+  "small_model": "deepinfra/openai/gpt-oss-120b",
+  "share": "disabled",
+  "permissions": [
+    { "action": "external_directory", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*.env", "effect": "ask" },
+    { "action": "read", "resource": "*.env.*", "effect": "ask" },
+    { "action": "edit", "resource": "*", "effect": "allow" },
+    { "action": "edit", "resource": "*.env", "effect": "ask" },
+    { "action": "edit", "resource": "*.env.*", "effect": "ask" },
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "pwd", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "fd *", "effect": "allow" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "sudo *", "effect": "ask" },
+    { "action": "shell", "resource": "rm *", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "ask" }
+  ],
+  "provider": {
+    "deepinfra": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "DeepInfra",
+      "options": {
+        "baseURL": "https://api.deepinfra.com/v1/openai"
+      },
+      "models": {
+        "deepseek-ai/DeepSeek-V4.1-Flash": { "name": "DeepSeek V4.1 Flash" },
+        "zai-org/GLM-5.3-Flash": { "name": "GLM 5.3 Flash" },
+        "openai/gpt-oss-120b": { "name": "gpt-oss 120B" },
+        "XiaomiMiMo/MiMo-V2.6-Pro": { "name": "MiMo V2.6 Pro" }
+      }
+    }
+  },
+  "mcp": {
+    "servers": {
+      "ddg-search": {
+        "type": "local",
+        "command": [
+          "uvx",
+          "duckduckgo-mcp-server"
+        ]
+      },
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "oauth": false,
+        "headers": {
+          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+        },
+        "disabled": false
+      }
+    }
+  }
+}
