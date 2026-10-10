@@ -20,6 +20,16 @@ o.confirm = true
 o.completeopt = "menuone,noselect,popup"
 o.winborder = "rounded"
 
+-- Look and feel
+o.termguicolors = true
+o.laststatus = 3 -- one statusline for the whole screen
+o.showmode = false -- lualine shows the mode
+o.pumheight = 12
+o.smoothscroll = true
+o.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.fillchars = { eob = " ", diff = "╱", fold = " " }
+
 -- 4 spaces by default (Python); 2 for web/config files
 o.expandtab = true
 o.shiftwidth = 4
@@ -34,7 +44,20 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.diagnostic.config({ severity_sort = true, virtual_text = true })
+local sev = vim.diagnostic.severity
+vim.diagnostic.config({
+  severity_sort = true,
+  virtual_text = { prefix = "●", spacing = 2 },
+  signs = { text = { [sev.ERROR] = " ", [sev.WARN] = " ", [sev.INFO] = " ", [sev.HINT] = "󰌵 " } },
+  float = { source = true },
+})
+
+-- Flash the text that was just yanked
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.hl.on_yank({ timeout = 180 })
+  end,
+})
 
 -- Keymaps
 local map = vim.keymap.set
@@ -64,6 +87,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
   checker = { enabled = false },
+  ui = { border = "rounded", backdrop = 100 },
   change_detection = { notify = false },
 })
 

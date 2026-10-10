@@ -1,0 +1,13 @@
+llm-pi-ai:
+  providers:
+    deepinfra:
+      apiKeyEnv: DEEPINFRA_API_KEY
+      api: openai-completions
+      baseURL: https://api.deepinfra.com/v1/openai
+      models:
+        - id: deepseek-ai/DeepSeek-V4.1-Flash
+        - id: XiaomiMiMo/MiMo-V2.6-Pro
+        - id: zai-org/GLM-5.3-Flash
+agent-default-model:
+  provider: deepinfra
+  model: deepseek-ai/DeepSeek-V4.1-Flash
