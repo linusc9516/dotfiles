@@ -1,7 +1,7 @@
 #!/bin/sh
 # Prints "BAR GAP YOFF BTN" in px. With "apply": also pushes them to yabai and sketchybar.
 BAR_PCT=4
-BTN_RATIO=90
+BTN_RATIO=100
 GAP=8
 YOFF=0
 
