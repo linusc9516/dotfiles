@@ -3,6 +3,8 @@ local icons = require("icons")
 local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
+local sizes = io.popen("~/.config/yabai/scripts/screen_sizes.sh"):read("*l") or ""
+
 local spaces = {}
 local brackets = {}
 local selected = {}
@@ -50,7 +52,7 @@ for i = 1, 10, 1 do
     background = {
       color = colors.transparent,
       border_color = colors.bg2,
-      height = 28,
+      height = tonumber(select(4, sizes:match("(%d+) (%d+) (%d+) (%d+)"))) or 28,
       border_width = 2,
     }
   })
