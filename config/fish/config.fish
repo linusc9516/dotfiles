@@ -65,3 +65,12 @@ catppuccin_tide -g mocha
 set -gx tide_time_format %H:%M
 set -gx tide_git_icon \ue702 # nf-dev-git, the diamond git logo
 
+
+# openclaude via DeepInfra. Key is read from the macOS Keychain (service: deepinfra).
+function openclaude-di
+    env CLAUDE_CODE_USE_OPENAI=1 \
+        OPENAI_BASE_URL=https://api.deepinfra.com/v1/openai \
+        OPENAI_MODEL=deepseek-ai/DeepSeek-V4.1-Flash \
+        OPENAI_API_KEY=(security find-generic-password -a $USER -s deepinfra -w) \
+        openclaude $argv
+end
