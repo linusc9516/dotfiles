@@ -4,7 +4,7 @@
   "small_model": "deepinfra/deepseek-ai/DeepSeek-V4-Flash-0731",
   "share": "disabled",
   "plugins": [
-    "envsitter-guard",
+    "envsitter-guard"
   ],
   "permissions": [
     { "action": "external_directory", "resource": "*", "effect": "ask" },
@@ -51,24 +51,22 @@
     }
   },
   "mcp": {
-    "ddg-search": {
-      "type": "local",
-      "command": ["uvx", "duckduckgo-mcp-server"],
-      "enabled": true
-    },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-      },
-      "enabled": true
-    },
-     "chrome-devtools": {
-      "type": "local",
-      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
-    },
     "servers": {
+      "ddg-search": {
+        "type": "local",
+        "command": ["uvx", "duckduckgo-mcp-server"]
+      },
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+        }
+      },
+      "chrome-devtools": {
+        "type": "local",
+        "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+      },
       "gworkspace": {
         "type": "local",
         "command": ["uvx", "workspace-mcp", "--permissions", "gmail:readonly", "calendar:full", "tasks:full"],
