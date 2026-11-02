@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "transformer-lens-interpretability": {
+      "source": "orchestra-research/ai-research-skills",
+      "sourceType": "github",
+      "skillPath": "04-mechanistic-interpretability/transformer-lens/SKILL.md",
+      "computedHash": "77bdc0b7bb5d06471df96661ebb63fc75dc6d51569bbb05abb6e6cc9fc7326af"
+    }
+  }
+}
