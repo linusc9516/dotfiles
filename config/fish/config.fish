@@ -9,6 +9,7 @@ set -gx VISUAL nvim
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
 set -gx GCC_COLORS 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 set -gx EZA_CONFIG_DIR ~/.config/eza
+set -gx OPENCODE_ENABLE_EXA 1
 fish_add_path -g ~/.opencode/bin
 set -gx CONTEXT7_API_KEY (security find-generic-password -s context7 -w 2>/dev/null)
 set -gx DEEPINFRA_API_KEY (security find-generic-password -s deepinfra -w 2>/dev/null)
