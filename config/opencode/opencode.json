@@ -1,8 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "deepinfra/deepseek-ai/DeepSeek-V4.1-Flash",
-  "small_model": "deepinfra/openai/gpt-oss-120b",
+  "model": "deepinfra/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "small_model": "deepinfra/deepseek-ai/DeepSeek-V4-Flash-0731",
   "share": "disabled",
+  "plugins": [
+    "envsitter-guard",
+  ],
   "permissions": [
     { "action": "external_directory", "resource": "*", "effect": "ask" },
     { "action": "read", "resource": "*", "effect": "allow" },
@@ -13,15 +16,20 @@
     { "action": "edit", "resource": "*.env.*", "effect": "ask" },
     { "action": "shell", "resource": "*", "effect": "ask" },
     { "action": "shell", "resource": "pwd", "effect": "allow" },
+    { "action": "shell", "resource": "ls", "effect": "allow" },
     { "action": "shell", "resource": "ls *", "effect": "allow" },
     { "action": "shell", "resource": "rg *", "effect": "allow" },
     { "action": "shell", "resource": "fd *", "effect": "allow" },
+    { "action": "shell", "resource": "git status", "effect": "allow" },
     { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff", "effect": "allow" },
     { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log", "effect": "allow" },
     { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git commit *", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
     { "action": "shell", "resource": "sudo *", "effect": "ask" },
-    { "action": "shell", "resource": "rm *", "effect": "ask" },
-    { "action": "shell", "resource": "git push *", "effect": "ask" }
+    { "action": "shell", "resource": "rm *", "effect": "ask" }
   ],
   "provider": {
     "deepinfra": {
@@ -31,30 +39,44 @@
         "baseURL": "https://api.deepinfra.com/v1/openai"
       },
       "models": {
-        "deepseek-ai/DeepSeek-V4.1-Flash": { "name": "DeepSeek V4.1 Flash" },
+        "deepseek-ai/DeepSeek-V4.1-Flash-1017": { "name": "DeepSeek V4.1 Flash 1017" },
+        "deepseek-ai/DeepSeek-V4-Flash-0731": { "name": "DeepSeek V4 Flash 0731" },
         "zai-org/GLM-5.3-Flash": { "name": "GLM 5.3 Flash" },
         "openai/gpt-oss-120b": { "name": "gpt-oss 120B" },
-        "XiaomiMiMo/MiMo-V2.6-Pro": { "name": "MiMo V2.6 Pro" }
+        "XiaomiMiMo/MiMo-V2.6-Pro": { "name": "MiMo V2.6 Pro" },
+        "Qwen/Qwen3-235B-A22B": { "name": "Qwen 3 MoE" },
+        "mistralai/Mistral-Small-3.2-24B-Instruct-2506": { "name": "Mistral Small 3.2" },
+        "meta-llama/Llama-3.3-70B-Instruct-Turbo": { "name": "Llama 3.3 70B Turbo" }
       }
     }
   },
   "mcp": {
-    "servers": {
-      "ddg-search": {
-        "type": "local",
-        "command": [
-          "uvx",
-          "duckduckgo-mcp-server"
-        ]
+    "ddg-search": {
+      "type": "local",
+      "command": ["uvx", "duckduckgo-mcp-server"],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       },
-      "context7": {
-        "type": "remote",
-        "url": "https://mcp.context7.com/mcp",
-        "oauth": false,
-        "headers": {
-          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      "enabled": true
+    },
+     "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    },
+    "servers": {
+      "gworkspace": {
+        "type": "local",
+        "command": ["uvx", "workspace-mcp", "--permissions", "gmail:readonly", "calendar:full", "tasks:full"],
+        "environment": {
+          "GOOGLE_OAUTH_CLIENT_ID": "{env:GOOGLE_OAUTH_CLIENT_ID}",
+          "GOOGLE_OAUTH_CLIENT_SECRET": "{env:GOOGLE_OAUTH_CLIENT_SECRET}"
         },
-        "disabled": false
+        "codemode": false
       }
     }
   }
