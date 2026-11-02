@@ -1,6 +1,6 @@
 [user]
-	name = Linus C.
-	email = linusc9516@gmail.com
+	name = Linus Chik
+	email = 99459701+linusc9516@users.noreply.github.com
 [core]
 	excludesfile = /Users/linusc/.gitignore_global
 	pager = delta
@@ -14,3 +14,9 @@
     autoSetupRemote = true
 [alias]
 	lg = log --topo-order --all --graph --date=local --pretty=format:'%C(green)%h%C(reset) %><(55,trunc)%s%C(red)%d%C(reset) %C(blue)[%an]%C(reset) %C(yellow)%ad%C(reset)%n'
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
