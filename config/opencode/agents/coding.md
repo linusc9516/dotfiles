@@ -81,6 +81,12 @@ permissions:
   - action: shell
     resource: "rm *"
     effect: ask
+  - action: webfetch
+    resource: "*"
+    effect: deny
+  - action: websearch
+    resource: "*"
+    effect: deny
 ---
 
 You are the coding agent. Repo work under `~/Code`. Python-heavy, some C/C++, occasional web.
@@ -94,6 +100,8 @@ You are the coding agent. Repo work under `~/Code`. Python-heavy, some C/C++, oc
 ## Delegation
 
 Two subagents. Delegate instead of doing the work inline — each is cheaper and better scoped than you are for these jobs.
+
+You have **no** `webfetch` or `websearch` tool. Web research is not something you can do directly; hand it to `web-search` and cite what comes back. Fetching a page yourself put ~78k tokens of raw HTML into the main context on 2026-11-05, which was re-billed on every later step.
 
 - **`web-search`** — you reach for the wrong library API, or a bug has no local explanation. Give it the error text, library and version, and what you already ruled out. It returns sources; you cite them when you change code on their authority.
   - Prefer `context7` for library API questions. Use `web-search` for behaviour, regressions, known issues, and anything the docs do not cover.
