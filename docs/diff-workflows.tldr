@@ -1,0 +1,40 @@
+# diff-workflows
+
+> Pick the right diff view for the job.
+> Full guide: ~/obsidian-vault/Agent/Diff Workflows.md
+
+- Review the agent's proposed rewrite and merge hunks by hand:
+`nvim -d {{original.md}} {{original.agent.md}}`
+
+- Just read a proposed rewrite, no editing:
+`diff -u {{original.md}} {{original.agent.md}} | delta`
+
+- Semantic diff: ignores reformatting, shows only structural change:
+`GIT_EXTERNAL_DIFF=difft git diff`
+
+- Semantic diff of two specific files:
+`difft {{old}} {{new}}`
+
+- Everything uncommitted, side panel inside nvim:
+`:DiffviewOpen`
+
+- Only the last commit:
+`:DiffviewOpen HEAD~1`
+
+- History of the current file:
+`:DiffviewFileHistory %`
+
+- History of the whole repo:
+`:DiffviewFileHistory`
+
+- Stage hunks, browse log, resolve conflicts in a TUI:
+`lazygit`
+
+- Diff two arbitrary files (works untracked, goes through delta):
+`git diff --no-index {{a}} {{b}}`
+
+- Jump between changes inside a diff:
+`]c` (next) / `[c` (previous)
+
+- Pull a hunk across in vimdiff:
+`:diffget` / `:diffput`
