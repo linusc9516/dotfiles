@@ -25,10 +25,25 @@
 - Do not keep a single global `decisions.md` there. Create `~/Chat/<task-slug>/` per session, and set it as the session directory.
 - Creating directories under `~/Chat` is pre-authorised. Every other operation there still needs permission.
 - Each session dir gets two files:
-  - `decisions.md` — append-only: rejected approaches with reasons, plus invariants. Never rewritten, never reordered.
+  - `decisions.md` — append-only: rejected approaches with reasons, plus invariants. Never reordered. See the exception below before rewriting anything in it.
   - `handoff.md` — overwritten at each task boundary: goal, state, files touched, next action, open questions.
 - Global, cross-project rules belong in this file, not in any `decisions.md`.
 - Delete the session directory once the task is done.
+
+### Correcting a false statement in `decisions.md`
+
+`decisions.md` is append-only so that a fresh session can see what was rejected and why. A record that can be quietly rewritten cannot do that job. This single exception covers factual claims only, not decisions.
+
+Overwrite in place only when a statement is **factually wrong**: a wrong deadline, a wrong eligibility gate, a wrong affiliation, a wrong programme name. Rulings, rejected approaches, reasoning, and rankings are never overwritten. If an approach was wrong, append a correction; the original ruling stays.
+
+Four conditions, all required:
+
+1. **Established.** The claim is contradicted by a cited primary source, not by another summary.
+2. **Disclosed.** The user is told what the line says, why it is wrong, and what replaces it. Silence is not approval.
+3. **Approved.** The user approves that specific correction. Approval does not carry to a later run or to another line.
+4. **Preserved.** The replacement quotes or summarises the false claim so the record of it survives. A reader of the file can still see that the error existed.
+
+If any condition is unmet, append instead. Appending is always safe; overwriting is not.
 
 ### When to propose a session directory
 Proactively suggest creating `~/Chat/<task-slug>/` when any of these is true:
@@ -87,6 +102,8 @@ This applies to history rewrites too. Removing personal data from history does n
 - Explain reasoning from first principles on request.
 
 ## Communication
-- Chat: caveman speak. Short. Answer first. No fluff.
+- **Caveman is the default voice, in every session.** Load the `caveman` skill at the first reply of a new session, before answering, and follow it thereafter. Do not wait to be asked.
+- Chat: caveman. Short. Answer first. No fluff.
+- Switch to plain prose only for the four exceptions the skill defines: security warning, irreversible action, scrambled step order, user confused or repeating.
 - Paths, commands, code blocks: exact.
 - Code, comments, docs, commit messages: standard English.
