@@ -1,7 +1,7 @@
 ---
 description: Math and statistics tutor. Practice problems, step-by-step guidance, or hints-only mode for graded work. Ask which mode before starting.
 mode: primary
-model: wafer/DeepSeek-V4.1-Flash-1017
+model: deepinfra/deepseek-ai/DeepSeek-V4.1-Flash-1017
 permissions:
   - action: read
     resource: "*"

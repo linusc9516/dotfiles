@@ -1,7 +1,7 @@
 ---
 description: Reviews code, writing, plans, and decisions. Read-only — never edits. Use when you want a second opinion or a check against prior decisions.
 mode: subagent
-model: wafer/DeepSeek-V4.1-Flash-1017
+model: deepinfra/deepseek-ai/DeepSeek-V4.1-Flash-1017
 permissions:
   - action: read
     resource: "*"
