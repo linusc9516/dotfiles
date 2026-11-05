@@ -1,7 +1,7 @@
 ---
 description: Personal assistant. Calendar, tasks, mail triage, vault edits. No shell, no network — reads untrusted input, so it must not be able to exfiltrate.
 mode: primary
-model: wafer/DeepSeek-V4.1-Flash-1017
+model: deepinfra/deepseek-ai/DeepSeek-V4.1-Flash-1017
 permissions:
   - action: read
     resource: "*"
