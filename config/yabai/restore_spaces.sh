@@ -11,6 +11,7 @@ assign() {
 
 assign code     '^Code$'              1
 assign kitty    '^kitty$'             1
+assign zed      '^Zed$'               2
 assign dsh      '^DeepSeek Harness$'  2
 assign obsidian '^Obsidian$'          3
 assign zen      '^Zen$'               4
