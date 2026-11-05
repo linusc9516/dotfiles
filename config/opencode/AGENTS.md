@@ -74,6 +74,7 @@ This applies to history rewrites too. Removing personal data from history does n
 - Read file before editing. Grep for existing pattern before writing new.
 - Verify TODO checkboxes against the filesystem before reporting them done; a ticked box is a claim, not evidence. Do not re-litigate `[x]` items.
 - Small diffs. One change per step.
+- Edits of **30 lines or fewer** to an existing file: edit in place, show `git diff`, do not ask first. This waives the sibling-file and pre-approval step only — commit, push, delete, dependency changes and anything outside the current project still need an explicit yes. Larger or structural rewrites keep the sibling flow. A `.agent` sibling is also unnecessary inside any directory that is scanned and loaded, since it becomes a live artifact; use a temp path outside the tree for those.
 - Ask before: delete, `sudo`, new dependency, touching `.env*`, writing outside project.
 - Verify before saying done: run tests, type check, or build. Report result. Not run = say so.
 - Unsure = ask one question. Do not guess.

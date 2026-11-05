@@ -117,7 +117,7 @@ Two files, two lifecycles:
 - `decisions.md` — **append-only**. Rejected approaches, invariants, "why we abandoned X". Never overwrite, never reorder.
 - `handoff.md` — **per-task, overwrite freely**. Goal, current state, files touched, next action, open questions.
 
-Write a handoff on **task boundary**, not at a context threshold. Do not reset just because context is at 70% — that costs re-read latency and loses trajectory for no benefit. 70% is a hard ceiling.
+Write a handoff on **task boundary**, not at a context threshold. Do not reset just because context is at 70% — that costs re-read latency and loses trajectory for no benefit. Compaction at the configured buffer handles context growth.
 
 When you finish a task or switch tasks: overwrite `handoff.md`. When you abandon an approach: append to `decisions.md` with the reason. Never let a rejected approach disappear — a fresh session will otherwise re-propose it.
 
