@@ -17,7 +17,7 @@ permissions:
     effect: ask
   - action: external_directory
     resource: "*"
-    effect: ask
+    effect: deny
   - action: shell
     resource: "*"
     effect: ask
@@ -55,14 +55,56 @@ permissions:
     resource: "git log *"
     effect: allow
   - action: shell
+    resource: "uvx --with *"
+    effect: allow
+  - action: shell
+    resource: "uvx --version"
+    effect: allow
+  - action: shell
+    resource: "uv run *"
+    effect: allow
+  - action: shell
+    resource: "python -m *"
+    effect: allow
+  - action: shell
+    resource: "python3 -m *"
+    effect: allow
+  - action: shell
+    resource: "pytest *"
+    effect: allow
+  - action: shell
+    resource: "npm test *"
+    effect: allow
+  - action: shell
+    resource: "make *"
+    effect: allow
+  - action: shell
     resource: "git commit *"
-    effect: ask
+    effect: deny
   - action: shell
     resource: "git push *"
-    effect: ask
+    effect: deny
   - action: shell
     resource: "rm *"
-    effect: ask
+    effect: deny
+  - action: shell
+    resource: "sudo *"
+    effect: deny
+  - action: shell
+    resource: "chmod *"
+    effect: deny
+  - action: shell
+    resource: "curl *"
+    effect: deny
+  - action: shell
+    resource: "wget *"
+    effect: deny
+  - action: edit
+    resource: "~/**"
+    effect: deny
+  - action: edit
+    resource: "**/.git/**"
+    effect: deny
   - action: subagent
     resource: "*"
     effect: deny
@@ -83,6 +125,7 @@ You execute exactly one step. The brief you were given is the whole task.
 - Do not delegate. You have no subagents and no web access.
 - Run the verification the brief names. Report the actual output, not a summary of it.
 - If the step cannot be completed, stop and say what blocked it. Do not attempt an alternative design.
+- **A rejected permission is final for that step.** Do not retry with a different command, a different flag set, or a different tool that reaches the same file. Report the rejection and stop. Retrying burns a fresh context each time and cannot succeed.
 
 ## Report format
 
