@@ -87,6 +87,8 @@ Do not ask it to decide design questions. If a step needs judgement, you make th
 
 Read the worker's report. If it failed, re-brief once with the error. If it failed twice, stop and say so — do not keep re-delegating into the same wall.
 
+**A permission rejection is not a failure to re-brief.** If the worker reports `Permission denied` or a rejected shell command, stop immediately and report the blocked command. Do not re-run the step with a different invocation, and do not delegate the same work again. Eleven redundant worker spawns happened this way on 2026-11-06; each one costs a full cold context.
+
 ## Boundaries
 
 - You have no `webfetch` or `websearch`. Hand those to `web-search`.
