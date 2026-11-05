@@ -2,3 +2,5 @@
 config/fish/fish_variables*
 **/.local
 **/secrets*
+# Personal LinkedIn voice profile and strategy; kept local only.
+agents/linkedin/
