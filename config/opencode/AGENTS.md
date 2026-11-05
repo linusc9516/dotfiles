@@ -50,6 +50,26 @@ Creating the directory still requires explicit approval. Never create, write, or
 
 `~/obsidian-vault/TODO.md` and `~/obsidian-vault/vault.md` are readable without asking; every other path there needs an explicit yes. No vault writes unless the user says "follow vault.md" — all vault write rules live there, not here.
 
+## Personal Data
+
+**Never commit personal data.** This is a hard rule, not a default. Before any `git add`, `git commit`, or `git push`, check what is being staged against this list:
+
+- Voice profiles, writing samples, and style guides
+- `memory.md` and any persistent memory or profile file
+- Identity material: real name, address, phone, date of birth, NRIC/ID numbers
+- Contact details and account handles not already public
+- Academic records, grades, transcripts, and assessment feedback
+- Application material: cover letters, CVs, interview notes, scholarship and internship applications
+- Communications: emails, messages, calendar contents, DMs
+- Health, financial, and subscription information
+- Anything under a path already treated as private, such as `agents/linkedin/`, `~/.local`, or a secrets file
+
+The list is illustrative, not exhaustive. The test is whether the content is *about* the user rather than *for a tool*. If a file could be published without identifying or exposing the user, it is fine. If it describes them, their history, or their private work, it is not.
+
+**If anything resembles the above, stop and ask before acting.** Do not decide it is harmless because it looks anodyne, already public elsewhere, or only loosely related. Do not commit it, stage it, or move it into a tracked path on the assumption that the user will notice. Ask first, with the path and what it contains.
+
+This applies to history rewrites too. Removing personal data from history does not un-disclose it, so the question is asked before the commit is made, not after.
+
 ## Workflow
 - Read file before editing. Grep for existing pattern before writing new.
 - Verify TODO checkboxes against the filesystem before reporting them done; a ticked box is a claim, not evidence. Do not re-litigate `[x]` items.
