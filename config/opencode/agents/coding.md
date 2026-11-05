@@ -1,7 +1,7 @@
 ---
 description: Primary coding agent. Repo work under ~/Code — experiments, debugging, scripts, small diffs. Has shell; never touches personal data.
 mode: primary
-model: wafer/DeepSeek-V4.1-Flash-1017
+model: deepinfra/deepseek-ai/DeepSeek-V4.1-Flash-1017
 permissions:
   - action: read
     resource: "*"
