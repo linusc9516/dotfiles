@@ -87,7 +87,7 @@ function compact(n) {
 function state(id) {
   let s = sessions.get(id)
   if (!s) {
-    s = { prompt: 0, cached: 0, out: 0, steps: 0, misses: 0, elapsedMs: 0, model: null, agent: null }
+    s = { prompt: 0, cached: 0, out: 0, steps: 0, misses: 0, elapsedMs: 0, lastCached: 0, lastPrompt: 0, model: null, agent: null }
     sessions.set(id, s)
   }
   return s
@@ -225,6 +225,11 @@ function handle(event, limits) {
   s.steps += 1
   s.elapsedMs += elapsedMs
   if (t.cached === 0 && t.prompt > 0) s.misses += 1
+  // Latest step only, so the footer reports whether this turn missed the
+  // cache rather than a running session total.
+  s.lastCached = t.cached
+  s.lastPrompt = t.prompt
+  s.lastContextPct = ctxLimit ? Number(ctxPct) : null
   if (start?.model) s.model = start.model
 
   log(
@@ -307,6 +312,9 @@ function sessionSnapshot() {
       outputTokens: s.out,
       cacheHitPct: Number(pct(s.cached, s.prompt)),
       cacheMisses: s.misses,
+      lastPromptTokens: s.lastPrompt,
+      lastCacheHitPct: Number(pct(s.lastCached, s.lastPrompt)),
+      lastContextPct: s.lastContextPct ?? null,
       tokensPerSecondAvg: s.elapsedMs > 0 ? Number((s.out / (s.elapsedMs / 1000)).toFixed(1)) : 0,
     }
   }

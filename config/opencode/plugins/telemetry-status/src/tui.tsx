@@ -102,8 +102,10 @@ function build(sessionID) {
   const sess =
     (sessionID && s.sessions?.[sessionID]) ?? s.session ?? null
 
-  const ctxTokens = s.last?.promptTokens
-  const ctxPct = s.last?.contextUsedPct
+  // Context from this session's latest step, falling back to the global last
+  // step for sessions the map has not seen yet.
+  const ctxTokens = sess?.lastPromptTokens ?? s.last?.promptTokens
+  const ctxPct = sess?.lastContextPct ?? s.last?.contextUsedPct
   if (typeof ctxTokens === "number" && ctxTokens > 0) {
     const size =
       ctxTokens >= 1e6 ? (ctxTokens / 1e6).toFixed(2) + "M" : (ctxTokens / 1e3).toFixed(1) + "k"
@@ -116,9 +118,9 @@ function build(sessionID) {
   const hit = sess?.cacheHitPct
   if (typeof hit === "number") parts.push({ text: `hit ${hit.toFixed(1)}%`, fg: hitTone(hit) })
 
-  const misses = sess?.cacheMisses
-  if (typeof misses === "number" && misses > 0) {
-    parts.push({ text: `${misses} miss`, fg: MOCHA.red })
+  // Only flag the most recent step, not the session's running miss count.
+  if (typeof sess?.lastCacheHitPct === "number" && sess.lastCacheHitPct === 0) {
+    parts.push({ text: "miss", fg: MOCHA.red })
   }
 
   const tps = sess?.tokensPerSecondAvg
