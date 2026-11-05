@@ -1,6 +1,6 @@
 ---
 description: Deep web researcher. Runs multiple query variants, digs through GitHub issues, forums and papers, and compiles findings with sources. Invocable directly, and delegated to by coding and assistant for research.
-mode: primary
+mode: all
 model: wafer/DeepSeek-V4.1-Flash-1017
 permissions:
   - action: read
