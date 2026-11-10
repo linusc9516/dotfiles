@@ -30,6 +30,11 @@
         - config/fish/completions/nvm.fish
         - config/fish/conf.d/fzf.fish
         - config/fish/conf.d/nvm.fish
+        # these dirs are already linked wholesale as a unit further up the
+        # glob; enumerating their children links each file a second time
+        # through the parent symlink and dotbot reports it as a failure
+        - config/opencode/web-search-modules/**
+        - config/opencode/plugins/telemetry-status/**
     ~/.agents: 
       path: agents
       glob: true
