@@ -14,13 +14,15 @@ assign kitty    '^kitty$'             1
 assign zed      '^Zed$'               2
 assign dsh      '^DeepSeek Harness$'  2
 assign obsidian '^Obsidian$'          3
-assign zen      '^Zen$'               4
-assign chrome   '^Google Chrome$'     5
-assign outlook  '^Microsoft Outlook$' 6
-assign telegram '^Telegram$'          7
-assign zapfast  '^ZapFast$'           7
-assign spotify  '^Spotifast$'         7
-assign dorion   '^Dorion$'            8
+assign skim     '^Skim$'              3
+assign anki     '^Anki$'              4
+assign zen      '^Zen$'               5
+assign chrome   '^Google Chrome$'     6
+assign outlook  '^Microsoft Outlook$' 7
+assign telegram '^Telegram$'          8
+assign zapfast  '^ZapFast$'           8
+assign spotify  '^Spotifast$'         8
+assign dorion   '^Dorion$'            9
 
 # Rules only affect windows that open after the rule was added,
 # so apply them to the windows that are already open as well.
@@ -32,4 +34,4 @@ command -v sketchybar >/dev/null && sketchybar --trigger spaces_restored
 # Optional: Set default layouts for each space
 for space in 1 2 3 4 5 6 7 8 9 10; do
   yabai -m space "$space" --layout bsp
-done
+done    
