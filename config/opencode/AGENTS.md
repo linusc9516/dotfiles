@@ -12,6 +12,15 @@
 - Bash output already filtered by RTK. Do not add `head` or `tail` to cut it.
 - Bulk read of large files: delegate to small model if available.
 
+## Dotfiles
+
+`~/dotfiles` is the source of truth. Dotbot links it into `~/.config`, `~/.agents` and a few home files; nearly everything under `~/.config` is a symlink into the repo, not a copy.
+
+- Edit config in `~/dotfiles`, never at the `~/.config` path. Same inode, but writing at the `~/.config` path looks like a change to installed state instead of to the repo.
+- Never hand-fix a link. Change `install.conf.yaml` and run `./install`; dry run first with `./install --dry-run`. `clean: ["~"]` means a careless run can remove links.
+- Skills live in `~/dotfiles/agents/skills/<name>/SKILL.md`.
+- If `./install` exits non-zero, read the output before assuming failure: cosmetic glob warnings (dotbot trying to link children of a directory that is already a symlink) also set a non-zero exit. Fix those with `exclude` entries, not by moving files.
+
 ## Ambiguity
 - If anything conflicts — instructions, files, conventions, prior decisions — STOP and ask.
 - NEVER implicitly assume my intent. If a request could be read two ways, ask which.
@@ -65,6 +74,10 @@ Creating the directory still requires explicit approval. Never create, write, or
 
 `~/obsidian-vault/TODO.md` and `~/obsidian-vault/vault.md` are readable without asking; every other path there needs an explicit yes. No vault writes unless the user says "follow vault.md" — all vault write rules live there, not here.
 
+## NTU
+
+`~/NTU/` is read-only. Read course material from it freely; never write, move, rename, or delete anything there without an explicit yes for that specific file. Course scratch work, `decisions.md` and `handoff.md` belong in the matching `~/Chat/<course>/` session directory, not in `~/NTU/`.
+
 ## Personal Data
 
 **Never commit personal data.** This is a hard rule, not a default. Before any `git add`, `git commit`, or `git push`, check what is being staged against this list:
@@ -90,7 +103,7 @@ This applies to history rewrites too. Removing personal data from history does n
 - Verify TODO checkboxes against the filesystem before reporting them done; a ticked box is a claim, not evidence. Do not re-litigate `[x]` items.
 - Small diffs. One change per step.
 - Edits of **30 lines or fewer** to an existing file: edit in place, show `git diff`, do not ask first. This waives the sibling-file and pre-approval step only — commit, push, delete, dependency changes and anything outside the current project still need an explicit yes. Larger or structural rewrites keep the sibling flow. A `.agent` sibling is also unnecessary inside any directory that is scanned and loaded, since it becomes a live artifact; use a temp path outside the tree for those.
-- Ask before: delete, `sudo`, new dependency, touching `.env*`, writing outside project.
+- Ask before: delete, `sudo`, new dependency, touching `.env*`, writing outside project, writing to `~/NTU/`.
 - Verify before saying done: run tests, type check, or build. Report result. Not run = say so.
 - Unsure = ask one question. Do not guess.
 - Use a skill only when its description matches. Do not load all.
