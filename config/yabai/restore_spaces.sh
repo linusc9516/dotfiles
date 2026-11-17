@@ -9,20 +9,19 @@ assign() {
   yabai -m rule --add label="$1" app="$2" space="$3"
 }
 
-assign code     '^Code$'              1
 assign kitty    '^kitty$'             1
+assign code     '^Code$'              2
 assign zed      '^Zed$'               2
 assign dsh      '^DeepSeek Harness$'  2
 assign obsidian '^Obsidian$'          3
 assign skim     '^Skim$'              3
-assign anki     '^Anki$'              4
-assign zen      '^Zen$'               5
-assign chrome   '^Google Chrome$'     6
-assign outlook  '^Microsoft Outlook$' 7
-assign telegram '^Telegram$'          8
-assign zapfast  '^ZapFast$'           8
-assign spotify  '^Spotifast$'         8
-assign dorion   '^Dorion$'            9
+assign zen      '^Zen$'               4
+assign chrome   '^Google Chrome$'     5
+assign outlook  '^Microsoft Outlook$' 6
+assign telegram '^Telegram$'          7
+assign zapfast  '^ZapFast$'           7
+assign spotify  '^Spotifast$'         7
+assign dorion   '^Dorion$'            8
 
 # Rules only affect windows that open after the rule was added,
 # so apply them to the windows that are already open as well.
