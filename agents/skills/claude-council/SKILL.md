@@ -7,7 +7,9 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent, AskUserQuestion
 
 # LLM Council
 
-> **Paths:** resolve `SKILL_DIR/` against the base directory reported in this skill's `<skill_content>` header. It holds `references/`, `scripts/`, `journal/` and `assets/`. Dispatch advisors with the `subagent` tool, not a Claude Code `Agent()` primitive.
+> **Paths:** resolve `SKILL_DIR/` against the base directory reported in this skill's `<skill_content>` header. It holds `references/`, `scripts/` and `assets/`. Dispatch advisors with the `subagent` tool, not a Claude Code `Agent()` primitive.
+>
+> **Journal location:** the run journal is personal data and lives outside `SKILL_DIR/`, in `${CLAUDE_COUNCIL_JOURNAL:-${XDG_STATE_HOME:-$HOME/.local/state}/claude-council}/council-log.jsonl`. The scripts resolve this themselves; never write journal output into `SKILL_DIR/`.
 
 Run any high-stakes decision through five structured thinking lenses, a peer-review round, a forced debate when consensus is too clean, and a dual-chairman synthesis that preserves dissent. Every run logs to a journal; outcomes feed a self-improvement loop that proposes persona refinements over time.
 
@@ -17,7 +19,7 @@ Run any high-stakes decision through five structured thinking lenses, a peer-rev
 
 ## Step 0 — Handle special invocations first
 
-- `/claude-council outcome <sha1> <note>` — look up the run in `SKILL_DIR/journal/council-log.jsonl` by sha1 prefix, update its `outcome` field, and confirm. Done.
+- `/claude-council outcome <sha1> <note>` — look up the run in the council journal (see Paths above) by sha1 prefix, update its `outcome` field, and confirm. Done.
 - `/claude-council meta` — run `bash SKILL_DIR/scripts/meta_analysis.sh` and surface the resulting amendment file path. Done.
 - Any other invocation → continue to Step 1.
 

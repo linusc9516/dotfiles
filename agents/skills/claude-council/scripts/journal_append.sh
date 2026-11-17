@@ -4,7 +4,10 @@
 # The JSON string is passed as the first argument.
 set -euo pipefail
 
-JOURNAL_DIR="$(cd "$(dirname "$0")/../journal" 2>/dev/null && pwd || echo "$(dirname "$0")/../journal")"
+# The journal is personal data, so it lives outside the skill directory. The
+# skill directory is inside the public dotfiles repo, and anything written
+# there would be committed.
+JOURNAL_DIR="${CLAUDE_COUNCIL_JOURNAL:-${XDG_STATE_HOME:-$HOME/.local/state}/claude-council}"
 JOURNAL_FILE="$JOURNAL_DIR/council-log.jsonl"
 LOCK_DIR="$JOURNAL_DIR/.append.lock.d"
 

@@ -7,7 +7,7 @@
 # same mkdir-lock as journal_append.sh so concurrent writes can't interleave.
 set -euo pipefail
 
-JOURNAL_DIR="$(cd "$(dirname "$0")/../journal" 2>/dev/null && pwd || echo "$(dirname "$0")/../journal")"
+JOURNAL_DIR="${CLAUDE_COUNCIL_JOURNAL:-${XDG_STATE_HOME:-$HOME/.local/state}/claude-council}"
 JOURNAL_FILE="$JOURNAL_DIR/council-log.jsonl"
 LOCK_DIR="$JOURNAL_DIR/.append.lock.d"
 
