@@ -5,6 +5,11 @@
 
 - clean: ["~"]
 
+# dsh/AGENTS.md is generated (core + dsh layer); edit the sources, not the output
+- shell:
+    - command: cat agents/AGENTS.md dsh/AGENTS.layer.md > dsh/AGENTS.md
+      description: Build dsh/AGENTS.md from the core and the dsh layer
+
 - link:
     ~/.gitconfig: .gitconfig
     ~/.gitignore_global: .gitignore_global
@@ -35,6 +40,9 @@
         # through the parent symlink and dotbot reports it as a failure
         - config/opencode/web-search-modules/**
         - config/opencode/plugins/telemetry-status/**
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.codex/AGENTS.md: agents/AGENTS.md
+    ~/.dsh/AGENTS.md: dsh/AGENTS.md
     ~/.agents: 
       path: agents
       glob: true

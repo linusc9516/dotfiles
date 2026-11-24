@@ -9,36 +9,22 @@
                             {
                                 "from": {
                                     "key_code": "f10",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "3",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_shift"
-                                        ]
+                                        "modifiers": ["left_command", "left_control", "left_shift"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "key_code": "f10"
-                                },
+                                "from": { "key_code": "f10" },
                                 "to": [
                                     {
                                         "key_code": "4",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_shift"
-                                        ]
+                                        "modifiers": ["left_command", "left_control", "left_shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -49,14 +35,9 @@
                         "description": "Caps Lock → Escape when tapped, Control when held",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
@@ -64,21 +45,36 @@
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ]
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
                             }
                         ]
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 337,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 337,
+                        "vendor_id": 13364
+                    },
+                    "treat_as_built_in_keyboard": true
+                }
+            ],
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": {
-                "keyboard_type_v2": "ansi"
-            }
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
 }
