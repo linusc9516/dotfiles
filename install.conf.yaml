@@ -35,6 +35,10 @@
         # through the parent symlink and dotbot reports it as a failure
         - config/opencode/web-search-modules/**
         - config/opencode/plugins/telemetry-status/**
+        - config/karabiner/**
+    # Karabiner replaces a symlinked karabiner.json with a real file on save;
+    # linking the directory keeps its writes inside the repo
+    ~/.config/karabiner: config/karabiner
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.codex/AGENTS.md: agents/AGENTS.md
     ~/.dsh/AGENTS.md: dsh/AGENTS.md

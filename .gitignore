@@ -7,3 +7,5 @@ agents/linkedin/
 # Council run journal is personal data; it lives in
 # ~/.local/state/claude-council/ and must never be committed.
 agents/skills/claude-council/journal/
+# Karabiner writes dated config snapshots here on its own.
+config/karabiner/automatic_backups/
