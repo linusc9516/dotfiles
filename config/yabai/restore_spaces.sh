@@ -22,6 +22,7 @@ assign telegram '^Telegram$'          7
 assign zapfast  '^ZapFast$'           7
 assign spotify  '^Spotifast$'         7
 assign dorion   '^Dorion$'            8
+assign discord  '^Discord$'           8
 
 # Rules only affect windows that open after the rule was added,
 # so apply them to the windows that are already open as well.
