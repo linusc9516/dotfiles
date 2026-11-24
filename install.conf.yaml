@@ -5,11 +5,6 @@
 
 - clean: ["~"]
 
-# dsh/AGENTS.md is generated (core + dsh layer); edit the sources, not the output
-- shell:
-    - command: cat agents/AGENTS.md dsh/AGENTS.layer.md > dsh/AGENTS.md
-      description: Build dsh/AGENTS.md from the core and the dsh layer
-
 - link:
     ~/.gitconfig: .gitconfig
     ~/.gitignore_global: .gitignore_global

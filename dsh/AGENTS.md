@@ -1,5 +1,4 @@
-
-<!-- dsh layer: appended to ~/.agents/AGENTS.md by ./install. Edit dsh/AGENTS.layer.md, not dsh/AGENTS.md. -->
+<!-- dsh-only layer. dsh also loads the shared core from ~/.agents/AGENTS.md, so never copy core rules here. -->
 
 ## Tool calls: emit them correctly, recover in one line
 
@@ -44,4 +43,4 @@ for `write` to bypass it.
 
 ## dsh reply voice
 
-The caveman rule that binds in dsh is the `personaPrefix` in the dsh profile patch (`~/.dsh/profiles/desktop/cordis.patch.yml`), a reserved prompt section above this file. Keep it in sync with Communication above; on any conflict, the persona prefix wins.
+The caveman rule that binds in dsh is the `personaPrefix` in the dsh profile patch (`~/.dsh/profiles/desktop/cordis.patch.yml`), a reserved prompt section above this file. Keep it in sync with Communication in the core (`~/.agents/AGENTS.md`); on any conflict, the persona prefix wins.
