@@ -63,7 +63,7 @@ Shared by every coding agent (Claude Code, OpenCode, Codex, dsh). A rule belongs
 - Verify TODO checkboxes against the filesystem before reporting them done; a ticked box is a claim, not evidence. Do not re-litigate `[x]` items.
 - Small diffs. One change per step.
 - Edits to existing files inside the current project: edit in place and show `git diff`; no need to ask first. Commit, push, delete, dependency changes and anything outside the current project still need an explicit yes.
-- **Obsidian vault notes are the exception.** Removing or overwriting more than 30 lines of existing content in a `.md` file under `~/obsidian-vault/` needs the sibling flow: show the merged draft and/or write `<name>.agent.md` beside the note, then wait for an explicit yes before touching the original. Code files are never subject to this.
+- Obsidian vault notes are the exception: follow the write tiers in `~/obsidian-vault/vault.md`.
 - Ask before: delete, `sudo`, new dependency, touching `.env*`, writing outside the project, writing to `~/NTU/`.
 - Verify before saying done: run tests, type check, or build. Report the result. Not run = say so.
 
